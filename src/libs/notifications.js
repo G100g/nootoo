@@ -1,4 +1,4 @@
-function showNotification(body) {
+export function showNotification(body) {
     Notification.requestPermission(function(result) {
         if (result === "granted") {
             navigator.serviceWorker.ready.then(function(registration) {
@@ -12,11 +12,3 @@ function showNotification(body) {
         }
     });
 }
-
-export const useNotification = () => {
-    return {
-        addNotification(message) {
-            showNotification(message);
-        }
-    };
-};

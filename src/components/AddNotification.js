@@ -1,12 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { useNotification } from "../hooks/useNotification";
+import { showNotification } from "../libs/notifications";
 
 const AddNotification = () => {
     const [message, setMessage] = useState("");
     const [enableButton, setEnableButton] = useState(false);
-    const { addNotification } = useNotification();
-
     return (
         <div className="add-notification">
             <textarea
@@ -23,7 +21,8 @@ const AddNotification = () => {
                 className="add-notification__button"
                 type="button"
                 onClick={() => {
-                    addNotification(message);
+                    showNotification(message);
+                    setMessage("");
                 }}
                 disabled={!enableButton}
             >
