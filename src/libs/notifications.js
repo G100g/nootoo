@@ -8,7 +8,7 @@ export function showNotification(body) {
                     requireInteraction: true,
                     actions: [{ action: "done", title: "Done" }],
                     icon: "/icon-152x152.png",
-                    badge: "/icon-96x96.png"
+                    badge: "/badge.png"
                 });
             });
         }
